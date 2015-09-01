@@ -13,12 +13,12 @@
             <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
             <true/>
         </dict>
-        <key>bikeexchange.com.au</key>
+        <key>www.sbikeexchange.com.au</key>
         <dict>
             <key>NSIncludesSubdomains</key>
             <true/>
             <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-            <true/>
+            <false/>
         </dict>
     </dict>
   </dict>
