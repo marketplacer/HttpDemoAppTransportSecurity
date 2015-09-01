@@ -1,25 +1,36 @@
-//
-//  ViewController.swift
-//  HttpDemoAppTransportSecurity
-//
-//  Created by Evgenii on 2/09/2015.
-//  Copyright © 2015 Evgenii Neumerzhitckii. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+  @IBOutlet weak var resultLabel: UILabel!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  @IBAction func didTapLoadButton(sender: AnyObject) {
+    resultLabel.text = ""
+    load("http://evgenii.com/")
+
+    load("https://www.bikeexchange.com.au/")
+    load("https://www.bikeexchange.com.au/dbimages/bike/fn_large/342/102723342/popup/16voltagejr24.jpg")
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  private func load(url: String) {
+    guard let nsUrl = NSURL(string: url) else { return }
+    
+    let task = NSURLSession.sharedSession().dataTaskWithURL(nsUrl) { [weak self] (data, response, error) in
+      if error == nil {
+        self?.log("Success: \(url)")
+      } else {
+        self?.log("Error: \(url)")
+      }
+    }
+    
+    task.resume()
   }
-
-
+  
+  private func log(text: String) {
+    dispatch_async(dispatch_get_main_queue()) { [weak self] in
+      var outputText = self?.resultLabel.text ?? ""
+      outputText += "\(text)\n\n"
+      self?.resultLabel.text = outputText
+    }
+  }
 }
 
