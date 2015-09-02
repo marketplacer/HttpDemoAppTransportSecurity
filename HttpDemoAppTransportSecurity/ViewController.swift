@@ -5,10 +5,8 @@ class ViewController: UIViewController {
 
   @IBAction func didTapLoadButton(sender: AnyObject) {
     resultLabel.text = ""
-    load("http://evgenii.com/")
-
+    load("https://apple.com/")
     load("https://www.bikeexchange.com.au/")
-    load("https://www.bikeexchange.com.au/dbimages/bike/fn_large/342/102723342/popup/16voltagejr24.jpg")
   }
   
   private func load(url: String) {

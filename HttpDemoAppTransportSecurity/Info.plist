@@ -6,19 +6,12 @@
   <dict>
     <key>NSExceptionDomains</key>
     <dict>
-        <key>evgenii.com</key>
+        <key>bikeexchange.com.au</key>
         <dict>
             <key>NSIncludesSubdomains</key>
             <true/>
-            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+            <key>NSExceptionRequiresForwardSecrecy</key>
             <true/>
-        </dict>
-        <key>www.sbikeexchange.com.au</key>
-        <dict>
-            <key>NSIncludesSubdomains</key>
-            <true/>
-            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-            <false/>
         </dict>
     </dict>
   </dict>
