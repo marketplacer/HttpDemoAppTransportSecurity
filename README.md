@@ -33,6 +33,6 @@ According to [ssllabs.com analysis](https://www.ssllabs.com/ssltest/analyze.html
 <img src='https://raw.githubusercontent.com/exchangegroup/HttpDemoAppTransportSecurity/master/graphics/ssllabs_bikeexchange.png' width='576' alt='SSL forward secrecy report'>
 
 
-The problem can be that the server uses weak ciphers, but it would be nice to know which ciphers are causing the problem.
+The problem with the server **can be** that the it uses weak ciphers, but it would be nice to know exactly which ciphers are causing the problem so they can be removed.
 
 See the list of supported ciphers in the apple documentation: https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/
